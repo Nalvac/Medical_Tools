@@ -1,0 +1,74 @@
+<ion-header >
+  <ion-toolbar class="tilte">
+    <ion-title style="margin-left: 25%">Accueil</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding style="background-color :#f4f5f8"  fullscreen>
+
+<ion-grid style="margin-top : 10%" >
+
+<ion-row >
+
+<ion-col col-6 >
+      
+          <ion-card (click)="Ouvrdv()" >
+            
+              <ion-card-content  style="text-align : center" (click)="ouvRdv()">-
+                <img width="80" height="80" src="../assets/imgs/rdv1.png"  style="background-color: white">
+                <p>Mes RDV</p>
+              </ion-card-content>
+
+            </ion-card>
+     
+</ion-col>
+
+  <ion-col col-6   >
+
+      <ion-card  (click)="ouvTest()">
+            
+          <ion-card-content  style="text-align : center">
+            <img  width="80" height="80" src="../assets/imgs/glycemie.png" style=" background-color: white">
+              <p>Mes Tests</p>
+          </ion-card-content>
+        </ion-card>          
+</ion-col>
+
+</ion-row>
+
+<ion-row>
+
+<ion-col col-6 >
+    <ion-card (click)="ouvHopitaux()">
+            
+        <ion-card-content style="text-align : center">
+          <img width="80" height="80" src="../assets/imgs/hospital.png" style=" background-color: white">
+           <p>Les Hôpitaux</p>
+        </ion-card-content>
+
+      </ion-card>
+   
+</ion-col>
+
+<ion-col col-6   >
+    <ion-card  (click)="ouvDossier()">
+
+        <ion-card-content style="text-align : center ">
+          <img width="80" height="80" src="../assets/imgs/mesdocument.png"  style="background-color: white">
+
+            <p>Mes Dossiers</p>
+        </ion-card-content>
+       
+      </ion-card>
+</ion-col>
+
+</ion-row>
+
+</ion-grid>
+
+</ion-content>
+
+

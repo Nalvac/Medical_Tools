@@ -1,0 +1,15 @@
+ion-content{
+    background: #fff url('../../assets/imgs/back_censored.jpg') no-repeat center center / cover;
+}
+.tilte{
+    color: rgb(0, 0, 0);
+    
+}
+
+ion-toolbar {
+    --background: rgb(255, 255, 255);
+    --ion-color-base: transparent !important;
+   
+   
+    --box-shadow:none !important;
+}

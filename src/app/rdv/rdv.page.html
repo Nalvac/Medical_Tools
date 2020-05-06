@@ -1,0 +1,58 @@
+<ion-header >
+  <ion-toolbar class="tilte">
+    <ion-title style="margin-left: 13%">Mes rendez-vous</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullScreen="true" class="background">
+  <div *ngIf="showEvent">
+
+  <p >{{title}}</p>
+
+  <calendar  id="myCalendar"
+  [eventSource]="eventSource"
+  [locale]="calendar.locale"
+  [calendarMode]="calendar.mode"
+  [currentDate]="calendar.currentDate"
+  (onCurrentDateChanged)="onCurrentDateChanged($event)"
+  (onRangeChanged)="reloadSource(startTime, endTime)"
+  (onEventSelected)="onEventSelected($event)"
+  (onTitleChanged)="onViewTitleChanged($event)"
+  (onTimeSelected)="onTimeSelected($event)"
+  step="30"
+  >
+  
+</calendar>
+</div>
+
+<div *ngIf="!showEvent">
+  <ion-item>
+    <ion-label><b>Evénement : </b></ion-label>
+    <ion-input type="text" placeholder="Nom de l'événement" [(ngModel)]="newEvent.title"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label><b>Debut : </b></ion-label>
+    <ion-datetime  cancel-text ="Annler" done-text= "Ok" displayFormat="DD/MM/YYYY HH:mm" pickerFormat="MMM D HH:mm"
+    monthShortNames="janv, fév, mars, avr, mai, jui, juil, août, sept, oct, nove, dec" [(ngModel)]="newEvent.startTime"></ion-datetime> 
+  </ion-item>
+  <ion-item>
+    <ion-label><b>Fin : </b></ion-label>
+    <ion-datetime  cancel-text ="Annler" done-text= "Ok" displayFormat="DD/MM/YYYY HH:mm" pickerFormat="MMM D HH:mm"
+    monthShortNames="janv, fév, mars, avr, mai, jui, juil, août, sept, oct, nove, dec" [(ngModel)]="newEvent.endTime"></ion-datetime> 
+  </ion-item>
+  
+  <ion-button  color ="#e20101" style="background-color : #e20101" expand="block" (click)="addNewEvent()">Ajouter un Rdv</ion-button>
+
+</div>
+
+
+<ion-fab color ="#e20101" vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button   (click)="ouvrForms()">
+    <ion-icon *ngIf="showEvent" name="add"></ion-icon>
+    <ion-icon *ngIf="!showEvent" name="close"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+</ion-content>

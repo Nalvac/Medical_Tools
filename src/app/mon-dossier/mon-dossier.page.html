@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar class="tilte">
+    <ion-title style="margin-left: 18%">Mon dossier</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  fullScreen=true>
+  <ion-list style="margin-top: 22%">
+    <ion-item button (click)="ouvGroup()">
+     Groupe Sanguin
+    </ion-item>
+    <ion-item button (click)="ouvAllerg()">
+      Allergies et Réaction
+    </ion-item>
+    <ion-item button (click)="ouvPbM()">
+      Problème médicaux
+    </ion-item>
+    <ion-item button (click)="ouvTrai()">
+      Traitement
+     </ion-item>
+    <ion-item button (click)="ouvTaille()">
+      Taille
+    </ion-item>
+    <ion-item button (click)="ouvPoid()">
+      Poids
+    </ion-item>
+  </ion-list>
+  <ion-item-divider>
+    Contact en cas d'urgence
+  </ion-item-divider>
+  <ion-list>
+    <ion-item button (click)="ouvCU()">
+      Nom Prénom
+    </ion-item>
+    <ion-item button (click)="ouvCU()">
+      Contact
+    </ion-item>
+  </ion-list>
+
+</ion-content>

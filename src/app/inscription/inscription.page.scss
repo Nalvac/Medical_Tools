@@ -1,0 +1,39 @@
+ion-content{
+   background: #fff url('../../assets/imgs/back_censored.jpg') no-repeat center center / cover;
+}
+ion-card{
+    background: none;
+    box-shadow: 0pc;
+    box-shadow:none !important;
+
+} 
+ion-button{
+
+    --background : none;
+    --box-shadow : none;
+
+ }
+ 
+ ion-item{
+    --ion-background-color: white;
+
+    
+     
+ }
+ ion-radio{
+    --color : white;
+    --color-checked  :  white;
+ }
+ .bas{
+    margin-top: 60%;
+ }
+
+ .enregistrer{
+   width: 209px;
+   display: block; margin: 0 auto;   
+   border-radius: 10px;
+   border-radius: 10px;
+   background-color : #e20101; 
+   --box-shadow : none;
+   margin-top: 5%;
+ }

@@ -1,0 +1,36 @@
+
+ion-content{
+    background: url('../../assets/imgs/back_censored.jpg') no-repeat center center / cover;
+}
+ion-card{
+    background: none;
+    box-shadow: 0pc;
+    box-shadow:none !important;
+
+}
+
+ion-item{
+    --ion-background-color: white;
+
+    border-radius :10px;
+     
+ }
+
+ ion-list{
+    --ion-border-radius :10px;
+    background: none;
+ }
+ ion-button{
+    width: 209px;
+    display: block; margin: 0 auto;   
+    border-radius: 10px;
+    border-radius: 10px;
+    background-color : #e20101; 
+    --box-shadow : none;
+
+ }
+ ion-ripple-effect {
+    color: none;
+    box-shadow: 0pc;
+    box-shadow:none !important;
+}

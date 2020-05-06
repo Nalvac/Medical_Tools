@@ -1,0 +1,32 @@
+ion-content{
+    background: #fff url('../../assets/imgs/back_censored.jpg') no-repeat center center / cover;
+}
+.tilte{
+    color: rgb(0, 0, 0);
+    
+}
+
+ion-toolbar {
+    --background: rgb(255, 255, 255);
+    --ion-color-base: transparent !important;
+   
+   
+    --box-shadow:none !important;
+}
+ion-button{
+    width: 209px;
+    display: block; margin: 0 auto;   
+    border-radius: 10px;
+    border-radius: 10px;
+    background-color : #e20101; 
+    --box-shadow : none;
+    margin-top: 20%;
+
+ }
+ ion-fab-button{
+        margin-bottom: 10%;
+     --background: #e20101;
+ }
+ p { text-transform: lowercase; line-height: 3; color: white; } 
+ p::first-letter { text-transform: uppercase}
+ 

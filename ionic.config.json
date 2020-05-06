@@ -1,5 +1,7 @@
 {
   "name": "MedicalTools",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

@@ -11,6 +11,22 @@
 
 /* Core CSS required for Ionic components to work properly */
 @import "~@ionic/angular/css/core.css";
+.monthview-secondary-with-event {
+    background-color: #e20101 !important;
+    color: white;
+}
+.monthview-selected {
+    background-color: #66b637 !important;
+    color: white;
+}
+.table {
+    background-color: #ffffff !important;
+}
+ion-content {
+    --background: url(/src/assets/imgs/ground-meat.jpg) no-repeat center/cover fixed;;
+
+  }
+  
 
 /* Basic CSS for apps built with Ionic */
 @import "~@ionic/angular/css/normalize.css";

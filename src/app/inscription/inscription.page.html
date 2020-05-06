@@ -1,0 +1,110 @@
+<ion-content padding class="background">
+  <form [formGroup]="registerForm" (ngSubmit)="register()">
+  <ion-card style="padding-top: 0%;">
+    <ion-card>
+      <ion-card-content style="text-align : center">
+
+
+
+      </ion-card-content>
+    </ion-card>
+  </ion-card>
+
+  <ion-card-content>
+  
+    <div *ngIf="etape==1">
+      <ion-item >
+        <ion-input  placeholder="Nom :" formControlName="first_name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input  placeholder="Prénom :" formControlName="last_name"></ion-input>
+      </ion-item>
+      <ion-item >
+        <ion-label style="color: gray;" >Année de naissaince :</ion-label>
+        <ion-datetime  cancel-text ="Annler" done-text= "Ok" displayFormat="DD/MMM/YYYY"
+        monthShortNames="janvier, février, mars, avril, mai, juin, juillet, août, septembre, octobre, novembre, decembre"></ion-datetime> 
+      </ion-item>
+      <ion-item >
+        <ion-input  placeholder="Poids :" formControlName="weight"></ion-input>
+      </ion-item>
+      <ion-item >
+        <ion-input  placeholder="Taille (Cm) :"   formControlName="height"></ion-input>
+      </ion-item>
+
+    </div>
+    <div *ngIf="etape==2">
+      <ion-item >
+        <ion-input placeholder="Ville :" formControlName="city" ></ion-input>
+      </ion-item>
+
+      <ion-item >
+        <ion-input  placeholder="Adresse :" formControlName="adress"></ion-input>
+      </ion-item>
+      <ion-item >
+        <ion-input  placeholder="Numéro de téléphone :" formControlName="tel"></ion-input>
+      </ion-item>
+     
+        <ion-item-divider style= "background-color: gray;">
+          <ion-label style="color: white;" >
+            Contact d'urgence
+          </ion-label>
+        </ion-item-divider>        
+     
+      <ion-item >
+        <ion-input  placeholder="Nom et Prénom :" formControlName="first_last_name"></ion-input>
+      </ion-item>
+      <ion-item >
+        <ion-input  placeholder="Numéro de téléphone :" formControlName="tel1"></ion-input>
+      </ion-item>
+
+    </div>
+    <div *ngIf="etape==3">
+      <ion-item >
+        <ion-input  placeholder="Problème medicaux :" formControlName="medical_problems"></ion-input>
+      </ion-item>
+
+      <ion-item >
+        <ion-input  placeholder="Allergie et réaction :" formControlName="allergy_and_reaction" ></ion-input>
+      </ion-item>
+      <ion-item >
+        <ion-input  placeholder="Traitement :" formControlName="treatment"></ion-input>
+      </ion-item>
+      <ion-item >
+        <ion-input placeholder="Groupe Sanguin :" formControlName="blood_group"></ion-input>
+      </ion-item>
+      <ion-item >
+        <ion-input  type="email" placeholder="Mail :" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input  type="password" formControlName="password" placeholder="Mot de passe :"></ion-input>
+      </ion-item>
+   
+      <ion-button expand ="block" class="enregistrer" [disabled]="!registerForm.valid" (click)="register()">
+        Enregistrer
+      </ion-button>
+    </div>
+    <div style="text-align : center; color : white;margin-top: inherit; margin-top: 10%;" >
+      <ion-icon [name]="radio1" size ="small"></ion-icon>
+      <ion-icon [name]="radio2" size ="small"></ion-icon>
+      <ion-icon [name]="radio3" size ="small"></ion-icon>
+    </div>
+    <ion-row>
+      <ion-col>
+        <ion-button class="mesbutton"  expand="block" (click)="OuvetapePre()">
+          <ion-icon   slot="icon-only" name="arrow-back-outline"></ion-icon>
+        </ion-button>
+
+      </ion-col>
+      <ion-col>
+        <ion-button  class="mesbutton"  expand="block" (click)="OuvetapeSui()">
+          <ion-icon  slot="icon-only" name="arrow-forward-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <div style="text-align: center; margin-top: 38%">
+      <ion-label  (click)="openSignIn()" style="color :white;">Vous avez un compte ? &nbsp;&nbsp;&nbsp;<span   style="color: #e20101; text-decoration: underline" >Connexion.</span></ion-label>
+   </div>
+  </ion-card-content>
+</form>
+</ion-content>

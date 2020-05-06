@@ -1,0 +1,78 @@
+<ion-header >
+  <ion-toolbar class="tilte">
+    <ion-title style="margin-left: 25%">Profil</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content  fullScreen="true">
+  <div style="height: 0px;">
+    <ion-grid style="margin-bottom: 10%">
+      <ion-row>
+        <ion-col>
+          <div >
+            <img style="margin-top: -2%;" [src]="myImage" />
+            <!---ion-icon style="text-align: center;" name="camera" color="light" (click)="getImage()"></ion-icon-->
+            <ion-button expand="block" fill="clear" style="margin-top : -5%" (click)="getImage()">             
+              <ion-icon slot="icon-only" style="text-align: center;" name="camera" color="light" ></ion-icon>
+            </ion-button>
+            <p style="color: rgb(0, 0, 0); font-weight: bolder; text-align: center;margin-top: 2%;">{{ Nom }} {{ Prenom }}</p>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div
+    style="background-image: url('assets/imgs/background.png'); height: 165px;"
+  ></div>
+
+ 
+    <ion-item-divider class="divider">INFORMATIONS GENERALES</ion-item-divider>
+
+    <ion-list>
+      <ion-item button (click)="modifiNom()">
+        <ion-icon name="people-outline"></ion-icon>
+        &nbsp;&nbsp;Votre  nom
+      </ion-item>
+      <ion-item  button  (click)="modifiPrenom()">
+        
+        &nbsp;&nbsp;Votre  prénom
+      </ion-item>
+      <ion-item button (click)=" modifitel()">
+        <ion-icon name="call-outline"></ion-icon>
+         &nbsp;&nbsp;Votre téléphone
+      </ion-item>
+    </ion-list>
+    <ion-item-divider class="divider">ADRESSE</ion-item-divider>
+
+    <ion-list>
+      <ion-item  button (click)="modifiAdresse()">
+      <ion-icon name="location-outline"></ion-icon>
+      &nbsp;&nbsp;Votre adresse
+      </ion-item>
+
+      <ion-item (click)="modifiVille()" >
+      
+        &nbsp;&nbsp;Votre ville
+      </ion-item>
+      <ion-item button (click)="modifCodePostal()">
+        
+        &nbsp;&nbsp;Votre code postal
+      </ion-item>
+    </ion-list>
+    <ion-item-divider class="divider"> IDENTIFICATION</ion-item-divider>
+
+    <ion-list>
+      <ion-item button (click)="modifiMail()">
+        <ion-icon  name="mail-outline" color="pink"></ion-icon>
+        &nbsp;&nbsp;Votre adresse e-mail
+      </ion-item>
+      <ion-item  button (click)="modifiPrenom()">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        &nbsp;&nbsp;Votre mot de passe
+      </ion-item>
+    </ion-list>
+  
+
+</ion-content>
