@@ -7,7 +7,10 @@ import { Platform } from '@ionic/angular';
   styleUrls: ['./hopitaux.page.scss'],
 })
 export class HopitauxPage implements OnInit {
-  
+  /**
+ * Dans le ficher typscript de ma page hopitaux je gère le map permettant d'identifié les hopitaux dans 
+ * un rayon de 1 kilomètre de l'emplacement du patient
+ */
   @ViewChild ('map',{static : false}) mapElement : ElementRef;
   map : google.maps.Map;
   hopitaux : google.maps.Marker;
@@ -15,11 +18,17 @@ export class HopitauxPage implements OnInit {
   constructor(private geolocation : Geolocation, private plt : Platform) { }
   ngOnInit() {
   }
+  /**
+   * Cette fonction me permet d'actualiser le maps après chaque évènement de click sur la page html hôpitaux
+   */
+
   ionViewWillEnter(){
     this.loadMaps();
-   // this.loadUserPosition();
     this.nearby();
   }
+  /**
+   * Fonction permet charger le maps avec l'emplacement du patient
+   */
   loadMaps(){ 
     let latlng
     this.plt.ready().then(()=>{
@@ -38,16 +47,7 @@ export class HopitauxPage implements OnInit {
     };
     this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions );
   }
-  loadUserPosition(){
-
-    this.plt.ready().then(()=>{
-        this.geolocation.getCurrentPosition().then(resp=>{
-          this.focusMap(resp.coords.latitude,resp.coords.longitude);
-          this.addMarker(resp.coords.latitude,resp.coords.longitude,"Vous")
-        })
-    })
-   
-  }
+ 
   focusMap(lat, lng){
      let latlng = new google.maps.LatLng(lat, lng);
      this.map.setCenter(latlng);
@@ -76,11 +76,14 @@ export class HopitauxPage implements OnInit {
   toggleMarker(){
 
   }
+  /**
+   * Cette fonction nous retourne tout les hopitaux proche de notre emplacement
+   */
   nearby (){
     let request :google.maps.places.PlaceSearchRequest = {
       type : 'hospital',
       radius :1000,
-      location : new google.maps.LatLng(45.1667,5.7167)
+      location : this.hopitaux.getPosition()
     };   
     let service = new google.maps.places.PlacesService(this.map);
   
@@ -95,7 +98,11 @@ export class HopitauxPage implements OnInit {
     });
   }
 
-
+/**
+ * Permet d'ajouter un marker sur chaque emplacement trouver
+ * Ainsi que les informations de leurs emplacement nom, adresse etc...
+ * @param places : prend en parametre l'objet place retourner par la fonction nearby()
+ */
 addNearbyMaker(places : google.maps.places.PlaceResult){
 
   const icon = {
