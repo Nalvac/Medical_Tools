@@ -92,8 +92,9 @@ export class ProfilPage implements OnInit {
             let updatName = this.db.collection('users').doc(this.userId);
             this.Nom = data['title'];
             let updateSingle = updatName.update({ first_name: data['title'] }).then(()=>{
-              load.dismiss();            
-              this.router.navigateByUrl('/tabs/tabs/profil')
+              load.dismiss();      
+              this.router.navigateByUrl('/tabs/tabs/profil');
+             
             });
            
           }
